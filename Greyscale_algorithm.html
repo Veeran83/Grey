@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+ <html>
+    <script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+
+ <head>
+
+<!--+++++head++++++++++head+++++++head++++++++head++++++++head++++++++head++++++++head++++++++head++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <script>
+       
+       
+      function upload()
+      {
+       var uploadedimg = document.getElementById("pic");
+       var image = new SimpleImage(uploadedimg);
+        var imgcanvas = document.getElementById("c1");
+       image.drawTo(imgcanvas);
+      }
+<!----------------------------------------------------------------------------->
+      
+      function grey()
+      {
+       var uploadedimg = document.getElementById("pic");
+       var image = new SimpleImage(uploadedimg);
+        
+        for(var pixel of image.values())
+        {
+           pixel.setBlue(250);
+        }
+        var imgcanvas = document.getElementById("c1");
+        image.drawTo(imgcanvas);
+      }
+    </script>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+    <style>
+      canvas {
+      width:400px;
+      height:300px;
+      border: 1px solid blue;
+      }
+
+    </style>
+
+  </head>
+<!--++++head++++++++head++++++++head++++++++head++++++++head++++++++head++++++++head+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+
+  <body>
+
+    <canvas id="c1"> </canvas>
+    <br>
+
+<!--------------------------------------------------------------------->
+    <h3>Here upload image</h3>
+    <input type="file" id="pic" >
+    <button onclick="upload()">Upload</button> 
+    <button onclick="grey()" >grey</button>
+  </body>
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+</html>
